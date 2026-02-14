@@ -1,12 +1,13 @@
-// Entry point aplikasi yang menggunakan Worker
+import { Worker } from '../Worker.js';
 
-// Inisialisasi worker
-const worker = new Worker('./Worker.js');
+// Inisialisasi aplikasi
+function main() {
+  console.log("Agendramacf app is starting...");
 
-// Kirim pesan ke worker
-worker.postMessage({ action: 'calculate', payload: [1, 2, 3, 4, 5] });
+  // Contoh penggunaan Worker
+  const worker = new Worker("Agenda Worker");
+  worker.runTask("Initialize agenda system");
+}
 
-// Terima pesan dari worker
-worker.onmessage = (event) => {
-  console.log('Hasil dari worker:', event.data);
-};
+// Jalankan aplikasi
+main();
