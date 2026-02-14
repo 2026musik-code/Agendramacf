@@ -1,6 +1,8 @@
-export default function handleIndex(request) {
-  return new Response(
-    JSON.stringify({ message: 'API response from Agendramacf' }),
-    { headers: { 'Content-Type': 'application/json' } }
-  )
-}
+     export default {
+       async fetch(request, env, ctx) {
+         return new Response("Hello from Agendramacf!", {
+           headers: { "content-type": "text/plain" },
+         });
+       },
+     };
+     
