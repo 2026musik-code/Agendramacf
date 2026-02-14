@@ -1,13 +1,6 @@
-import { Worker } from '../Worker.js';
-
-// Inisialisasi aplikasi
-function main() {
-  console.log("Agendramacf app is starting...");
-
-  // Contoh penggunaan Worker
-  const worker = new Worker("Agenda Worker");
-  worker.runTask("Initialize agenda system");
+export default function handleIndex(request) {
+  return new Response(
+    JSON.stringify({ message: 'API response from Agendramacf' }),
+    { headers: { 'Content-Type': 'application/json' } }
+  )
 }
-
-// Jalankan aplikasi
-main();
